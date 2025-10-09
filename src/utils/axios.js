@@ -3,7 +3,7 @@ import qs from "qs";
 
 const config = {
   baseURL:
-    `${import.meta.env.VITE_APP_BASEURL}/api` || "http://localhost:1337/api",
+    (import.meta.env.VITE_APP_BASEURL || "http://localhost:1337") + "/api",
   paramsSerializer: {
     serialize: (params) => {
       return qs.stringify(params, {
